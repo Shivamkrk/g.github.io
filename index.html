@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    }
+    .container{
+    height:200vh;
+    width:100%;
+    background:linear-gradiet(red,aqua,blue);
+    }
+    .item{
+    width:100%;
+    height:auto;
+    background:rgb(99,29,7);
+    padding:1.5rem 0.5rem;
+    position:fixed;
+    opacity:0.9;
+    }
+    h3{
+    font-size:1.3rem;
+    }
+    nav{
+    height:100vh;
+    width:70%;
+    position:absolute;
+    right:0;
+    top:0;
+    background-color:rgb(35,8,77);
+    display:none;
+    text-align:center;
+    box-shadow:-75px 91px 87px 1000px rgba(0,0,0,0.1);
+    transform:scale(0.8,0.5);
+    transition:transform 3s ease-in-out;
+    margin:0 4px 0;
+    }
+    .clo:checked ~ nav{
+    display:block;
+    transform:scale(1);
+    }
+    .clo{
+    display:none;
+    }
+    .t{
+    width:3.2rem;
+    height:0.5rem;
+    background-color:white;
+    display:block;
+    position:relative;
+    border-radius:2px;
+    }
+    .t::after{
+    content:"";
+    width:3.2rem;
+    height:0.5rem;
+    background-color:white;
+    display:block;
+    position:absolute;
+    top:100%;
+    margin-top:5px;
+    border-radius:2px;
+    }
+    .t::before{
+    content:"";
+    width:3.2rem;
+    height:0.5rem;
+    background-color:white;
+    display:block;
+    position:absolute;
+    bottom:100%;
+    margin-bottom:5px;
+    border-radius:2px;
+    }
+    nav li a,li{
+    text-decoration:none;
+    list-style:none;
+    color:red;
+    }
+    .clo:checked ~ nav{
+    position:fixed;
+    }
+    .clo:checked ~ .t,.clo:checked ~ .t::after,.clo:checked ~ .t::before{
+    background:linear-gradient(rgb(89,36,57),rgb(56,27,6));
+    }
+    .t,.t::after,.t::before{
+    transition:background-color 0.8s;
+    }
+    .clo:checked ~ .t{
+    visibility:hidden;
+    }
+    .clo:checked ~ .t::after{
+    visibility:visible;
+    transform:rotate(45deg);
+    position:relative;
+    top:-140%;
+    }
+    .clo:checked ~ .t::before{
+    visibility:visible;
+    transform:rotate(-45deg);
+    position:relative;
+    top:17%;
+    }
+    nav ul li a{
+    text-transform:capitalize;
+    color:black;
+    }
+    nav ul li a:hover{
+    color:blue;
+    }
+    ul{
+    width:100%;
+    height:20%;
+    display:grid;
+    grid-template-columns:1fr;
+    grid-row-gap:1rem;
+    }
+    nav{
+    padding:1rem 0;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <input type="checkbox" class="clo" id="id">
+        <label for="id" class="t"></label>
+        <nav>
+          <ul>
+            <li><a href="#" >home</a></li>
+            <li><a href="#" >about</a></li>
+            <li><a href="#" >read</a></li>
+            <li><a href="#" >contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
